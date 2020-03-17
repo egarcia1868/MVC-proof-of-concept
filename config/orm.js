@@ -1,4 +1,4 @@
-const connection = require("connection.js");
+const connection = require("./connection");
 
 // The ?? signs are for swapping out table or column names
 // The ? signs are for swapping out other values
@@ -7,31 +7,44 @@ const connection = require("connection.js");
 
 var orm = {
   selectAll: (tableInput) => {
-    var queryString = "SELECT * FROM ??";
-    connection.query(queryString, tableInput, (err, result) => {
+    var queryString = `SELECT * FROM ${tableInput};` ;
+    connection.query(queryString, (err, result) => {
       if (err) throw err;
       console.log(result);
     });
   },
-  insertOne: (insertFields, whatToInsert) => {
-    var queryString = "INSERT INTO burgers ?? VALUES ?";
-    console.log(queryString);
-    connection.query(queryString, [insertFields, whatToInsert], (err, result) => {
-      if (err) throw err;
-      console.log(result);
-    });
-  },
-  updateOne: (fieldOne, valueOne, fieldTwo, valueTwo) => {
-    var queryString =
-      "UPDATE burgers SET ??=? WHERE ??=?";
+  insertOne: (table, cols, vals) => {
+    var queryString = `INSERT INTO ${table} (`;
+// after getting this to work I'd like to try to reduce the code below a bit with template literals ------------
+    queryString += " (";
+    queryString += cols.toString();
+    queryString += ") ";
+    queryString += "VALUES (";
+    queryString += printQuestionMarks(vals.length);
+    queryString += ") ";
 
-    connection.query(
-      queryString,
-      [fieldOne, valueOne, fieldTwo, valueTwo], (err, result) => {
-        if (err) throw err;
-        console.log(result);
+    console.log(queryString);
+    connection.query(queryString, vals, (err, result) => {
+      if (err) throw err;
+      console.log(result);
+    });
+  },
+  updateOne: (table, objColVals, condition, cb) => {
+    var queryString = `UPDATE ${table}`;
+
+    queryString += " SET ";
+    queryString += objToSql(objColVals);
+    queryString += " WHERE ";
+    queryString += condition;
+
+    console.log(queryString);
+    connection.query(queryString, (err, result) => {
+      if (err) {
+        throw err;
       }
-    );
+
+      cb(result);
+    });
   }
 };
 
