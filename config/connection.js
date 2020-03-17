@@ -1,4 +1,6 @@
 var mysql = require("mysql");
+require('dotenv').config();
+
 
 // Setting up our connection information
 var source = {

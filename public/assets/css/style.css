@@ -1,0 +1,21 @@
+h2 {
+  color: #f30;
+}
+
+body {
+  background-color: #fc6;
+}
+
+.burger {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.pic {
+  margin: 0 auto;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
