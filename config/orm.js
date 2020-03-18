@@ -58,7 +58,7 @@ var orm = {
     console.log(queryString);
     connection.query(queryString, vals, (err, result) => {
       if (err) throw err;
-      console.log(result);
+      console.log("res1 in orm: "+result);
       cb(result)
     });
   },
@@ -70,6 +70,7 @@ var orm = {
     queryString += " WHERE ";
     queryString += condition;
 
+    console.log("updateOne: vv");
     console.log(queryString);
     connection.query(queryString, (err, result) => {
       if (err) {

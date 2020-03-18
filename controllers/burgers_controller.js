@@ -23,7 +23,7 @@ router.post("/api/burgers", (req, res) => {
 router.put("/api/burgers/:id", (req, res) => {
   var condition = "id = " + req.params.id;
 
-  console.log("condition", condition);
+  console.log("(in controller) condition", condition);
 
   burger.updateOne(
     {
