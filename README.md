@@ -8,7 +8,7 @@ Simply go to [my Eat-Da-Burger app](https://whispering-ridge-27306.herokuapp.com
 
 ### Screenshot
 
-![Screenshot!](/public/assets/img/newBurger.png?raw=true "Screenshot of the Eat-Da-Burger app")
+![Screenshot!](/public/assets/img/EatDaBurger.png?raw=true "Screenshot of the Eat-Da-Burger app")
 This is how the App looks if I have Mushroom Swiss, Chilantro, and El Diablo burgers added and not devoured, and a Hat Creek and Big Mac already devoured.
 
 ## Built With
