@@ -1,6 +1,6 @@
 var mysql = require("mysql");
 require('dotenv').config();
-
+let connection;
 
 // Setting up our connection information
 var source = {
@@ -15,8 +15,11 @@ var source = {
 
 
 // Creating our connection
-var connection = mysql.createConnection(source.localhost);
-
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection(source.localhost);
+}
 
 // Connecting to the database.
 connection.connect(function(err) {
