@@ -4,7 +4,7 @@ $(function() {
     // let nowDevoured = $(this).data("devoured");
 
     var nowDevouredState = {
-      devoured: 1   //nowDevoured
+      devoured: True   //nowDevoured
     };
 
     // Send the PUT request.
@@ -13,20 +13,21 @@ $(function() {
       data: nowDevouredState
     }).then(
       function() {
-        console.log("changed sleep to 1");
+        console.log("changed devoured to 1");
         // Reload the page to get the updated list
         location.reload();
       }
     );
   });
 
+  //  This will add a new burger to the database
   $(".create-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
     var newBurger = {
       burger_name: $("#ca").val().trim(),
-      devoured: 0  //$("[name=devoured]:checked").val().trim()
+      devoured: False  //$("[name=devoured]:checked").val().trim()
     };
 
     // Send the POST request.

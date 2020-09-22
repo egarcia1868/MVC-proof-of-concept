@@ -4,7 +4,7 @@ A simple app demonstrating my ability to use the MVC design pattern.
 
 ## Getting Started
 
-Simply go to [my Eat-Da-Burger app](https://whispering-ridge-27306.herokuapp.com/) on your favorite browser and you'll be able to "add burgers," "devour burgers," and see the burgers that have been devoured.
+Simply go to [my Eat-Da-Burger app](https://whispering-ridge-27306.herokuapp.com/) on your favorite browser and you'll be able to "add burgers" to add them to the database and click "devour" to change their devoured state, as well as see the burgers that have been devoured.
 
 ### Screenshot
 
