@@ -1,4 +1,4 @@
-# MVC Demo App  (Eat-Da-Burger!)
+# MVC Demo App
 
 A simple app demonstrating my ability to use the MVC design pattern.
 
